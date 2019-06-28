@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Psychic Game</title>
+  </head>
+
+  <body>
+    <h1>Voodoo Momma JuJu's Psychic Game!</h1>
+    <!-- // CONTAINER FOR THE psychic picture -->
+    <div id="psychicHolder">
+      <img
+        src="./assets/images/mamajuju.png"
+        alt="mamajuju"
+        height="300"
+        width="300"
+      />
+      <p>
+        Guess which letter im thinking of...<span id="mysteryLetter"></span>
+      </p>
+      <button type="button" onClick="letterPicker()">
+        PICK NEW LETTER
+      </button>
+    </div>
+
+    <!-- PICK A LETTER FORM AND SUBMIT -->
+    <div>
+        <h2>INSERT A NEW GUESS BELOW</h2>
+        <form type="form">
+            <input name="newGuess" id="newGuess" type="text" value="">
+            <input type="submit" value="Make this guess!" onClick="makeGuess()">
+        </form>
+    </div>
+
+    <!-- //CONTAINER FOR ALREADY CHOSEN LETTERS resets after every win/loss -->
+    <div id="chosenLetters">
+      <h1>You have already guessed these letters...</h1>
+      <div id="lettersArr">
+        <!-- //Empty Array  -->
+      </div>
+    </div>
+    <br>
+
+    <!-- //Wins and losses counters -->
+    <div id="winsLossesContainer">
+      <!-- //increases on a win  -->
+      <div class="winsLosses">
+        <p>
+          You have guessed correctly <span id="correctGuesses"></span> times.
+        </p>
+      </div>
+
+      <!-- //increases on a loss -->
+      <div class="winsLosses">
+        <p>
+          You have guessed incorrectly <span id="incorrectGuesses"></span> times.
+        </p>
+      </div>
+    </div>
+    <div id="guesses">
+
+      <!-- //decreases every guess -->
+      <div class="guessesCount">
+        <strong
+          ><p>
+            You only have <span id="guessesLeft"> </span> guesses left.
+          </p></strong
+        >
+      </div>
+    </div>
+
+    <!-- //Link JS game file -->
+    <script src="./assets/javascript/game.js"></script>
+  </body>
+</html>
