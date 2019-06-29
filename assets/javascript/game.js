@@ -21,15 +21,10 @@ function reNewGame() {
   letterPicker();
 }
 
-function randomizer() {
-  document.getElementById("mysteryLetter").innerHTML = mysteryLetter;
-}
-
 function letterPicker() {
   mysteryLetter = "";
   mysteryLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
   console.log(mysteryLetter);
-  randomizer();
 }
 
 function clicky() {
