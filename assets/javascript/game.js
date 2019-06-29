@@ -49,7 +49,8 @@ function clicky3() {
 function makeGuess() {
   event.preventDefault();
   var newGuessedLetter = document.getElementById("newGuess").value;
-  if (newGuessedLetter !== mysteryLetter) {
+  var formattedGuess = newGuessedLetter.toUpperCase();
+  if (formattedGuess !== mysteryLetter) {
     console.log(newGuessedLetter);
     guessedLetters += " " + newGuessedLetter;
     insertLetters();
@@ -57,19 +58,28 @@ function makeGuess() {
     newGuessedLetter = "";
     guessesLeft--;
     clicky()
-    if (guessesLeft < 1) {
-      console.log("gameover")
+    if (guessesLeft === 0) {
+      losses++;
+      console.log("gameover");
       reNewGame();
+      resetGuessedLetters();
+      clicky();
+      
     }
   } else {
     document.getElementById("newGuess").value = "";
     wins++;
     console.log("winner winner")
     guessesLeft = 9;
-    guessedLetters = "";
+    resetGuessedLetters();
     clicky();
     letterPicker();
   }
+}
+
+function resetGuessedLetters(){
+  guessedLetters = "";
+  insertLetters();
 }
 
 function insertLetters() {

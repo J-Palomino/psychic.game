@@ -15,7 +15,7 @@
         height="300"
         width="300"
       />
-      <p>
+      <p class="hide">
         Guess which letter im thinking of...<span id="mysteryLetter"></span>
       </p>
       <button type="button" onClick="letterPicker()">
@@ -27,7 +27,7 @@
     <div>
         <h2>INSERT A NEW GUESS BELOW</h2>
         <form type="form">
-            <input name="newGuess" id="newGuess" type="text">
+            <input name="newGuess" id="newGuess" type="text" maxlength = "1">
             <input type="submit" value="Make this guess!" onClick="makeGuess()">
         </form>
     </div>
@@ -46,14 +46,14 @@
       <!-- //increases on a win  -->
       <div class="winsLosses">
         <p>
-          You have guessed correctly <span id="correctGuesses"></span> times.
+          You have won <span id="correctGuesses"></span> times.
         </p>
       </div>
 
       <!-- //increases on a loss -->
       <div class="winsLosses">
         <p>
-          You have guessed incorrectly <span id="incorrectGuesses"></span> times.
+          You have lost <span id="incorrectGuesses"></span> times.
         </p>
       </div>
     </div>
